@@ -42,6 +42,7 @@ gem 'rack-cors'
 # Authentication [https://github.com/heartcombo/devise#getting-started]
 gem 'devise'
 gem 'devise-jwt'
+gem 'jsonapi-serializer'
 
 # Authorization [https://github.com/CanCanCommunity/cancancan]
 gem 'cancancan'
