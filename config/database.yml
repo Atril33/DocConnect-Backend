@@ -83,4 +83,4 @@ production:
   <<: *default
   database: DocConnect_Backend_production
   username: DocConnect_Backend
-  password: <%= ENV["DOCCONNECT_BACKEND_DATABASE_PASSWORD"] %>
+  password: 54321
