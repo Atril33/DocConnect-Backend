@@ -1,1 +1,1 @@
-json.partial! 'api/v1/appointments/appointment', appointment: @appointment
+json.appointment @appointment
