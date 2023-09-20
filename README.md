@@ -225,11 +225,6 @@ Original design idea by [Gregoire Vella on Behance](https://www.behance.net/greg
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## ❓ FAQ <a id="faq"></a>
-
-- **Do I need a IDE or a special text editor to make changes?**
-
-  - No, you don't. You can use NotePad to make changes.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
