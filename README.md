@@ -3,11 +3,8 @@
 <div align="center">
     <img src="./assets/lordksix-logos_transparent.png" alt="logo" width="240"  height="auto" margin="auto"/>
 </div>
-<div align="center">
-    <img src="./assets/erd_diagram.png" alt="logo" width="400"  height="auto" margin="auto"/>
-    <br/>
-</div>
-<h1 align="center"><b>Budget by Lordksix</b></h3>
+
+<h1 align="center"><b>DocConnect</b></h3>
 
 # 📗 Table of Contents
 
@@ -31,9 +28,9 @@
   - [❓ FAQ](#faq)
   - [📝 License](#license)
 
-# 📖 Budget by Lordksix <a id="about-project"></a>
+# 📖 DocConnect <a id="about-project"></a>
 
-**Budget by Lordksix** is a Ruby on Rails web application with PostgreSQL as database. It allows to manage your budget by creating categories of expenses, and transactions for each category.
+**DocConnect** is a Ruby on Rails web application with PostgreSQL as database. It allows to manage your budget by creating categories of expenses, and transactions for each category.
 
 For a video explanation, please [here]()
 
@@ -180,6 +177,22 @@ however, if you haven't run `./bin/dev`
 - LinkedIn: [@wladpasquel](https://www.linkedin.com/in/wladpasquel/)
 - Medium: [@wladimir.pasquel](https://medium.com/@wladimir.pasquel)
 
+👤 **Misal Azeem**
+
+- GitHub: [@misalazeem](https://github.com/misalazeem)
+
+👤 **Andrianariv David**
+
+- GitHub: [@andrianarivo](https://github.com/andrianarivo)
+- Twitter: [@andrianarivo](https://twitter.com/dandrianarivo)
+- LinkedIn: [@andrianarivo](https://www.linkedin.com/in/andrianarivo)
+
+👤 **Syed Atril**
+
+- GitHub: [@githubhandle](https://github.com/Atril33)
+- Twitter: [@twitterhandle](https://twitter.com/AtrilSyed)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/syed-atril-831696248/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a id="future-features"></a>
@@ -222,6 +235,6 @@ Original design idea by [Gregoire Vella on Behance](https://www.behance.net/greg
 
 ## 📝 License <a id="license"></a>
 
-This project is [GNUv3](./LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
