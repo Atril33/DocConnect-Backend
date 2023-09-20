@@ -41,7 +41,8 @@ users = []
     email: Faker::Internet.unique.email,
     password: "admin1234",
     password_confirmation: "admin1234",
-    confirmed_at: Time.now
+    confirmed_at: Time.now,
+    jti: Faker::Alphanumeric.alpha(number: 10)
   )
 end
 
