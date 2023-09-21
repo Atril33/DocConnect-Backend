@@ -6,7 +6,7 @@ class Api::V1::DoctorsController < ApplicationController
     @doctors = Doctor.all
     render json: @doctors
   end
-  
+
   def show
     @doctors = Doctor.all
     @doctor = @doctors.find(params[:id])
@@ -16,25 +16,27 @@ class Api::V1::DoctorsController < ApplicationController
 
   # POST /doctors
   # POST /doctors.json
-  def create
-    @doctor = Doctor.new(doctor_params)
 
+  def create
+    @specialization = Specialization.find(params[:specialization_id])
+    @doctor = @specialization.doctors.new(doctor_params)
+  
     if @doctor.save
       render :show, status: :created, location: @doctor
     else
       render json: @doctor.errors, status: :unprocessable_entity
     end
   end
-
+  
   # PATCH/PUT /doctors/1
   # PATCH/PUT /doctors/1.json
-  def update
-    if @doctor.update(doctor_params)
-      render :show, status: :ok, location: @doctor
-    else
-      render json: @doctor.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @doctor.update(doctor_params)
+  #     render :show, status: :ok, location: @doctor
+  #   else
+  #     render json: @doctor.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /doctors/1
   # DELETE /doctors/1.json
@@ -49,8 +51,7 @@ class Api::V1::DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def doctor_params
-    params.fetch(:doctor, {})
-  end
+    params.require(:doctor).permit(:name, :time_available_from, :time_available_to, :bio, :fee_per_appointment).merge(specialization_id: @specialization.id)
+  end  
 end
