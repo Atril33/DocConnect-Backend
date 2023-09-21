@@ -12,10 +12,6 @@ class Api::V1::DoctorsController < ApplicationController
     @doctor = @doctors.find(params[:id])
     render json: @doctor
   end
-  
-
-  # POST /doctors
-  # POST /doctors.json
 
   def create
     @specialization = Specialization.find(params[:specialization_id])
@@ -27,26 +23,14 @@ class Api::V1::DoctorsController < ApplicationController
       render json: @doctor.errors, status: :unprocessable_entity
     end
   end
-  
-  # PATCH/PUT /doctors/1
-  # PATCH/PUT /doctors/1.json
-  # def update
-  #   if @doctor.update(doctor_params)
-  #     render :show, status: :ok, location: @doctor
-  #   else
-  #     render json: @doctor.errors, status: :unprocessable_entity
-  #   end
-  # end
 
-  # DELETE /doctors/1
-  # DELETE /doctors/1.json
   def destroy
+    @doctor = Doctor.find(params[:id])
     @doctor.destroy
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_doctor
     @doctor = Doctor.find(params[:id])
   end
