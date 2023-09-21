@@ -36,7 +36,14 @@ end
 # Create Users
 users = []
 100.times do
-  users << User.create(name: Faker::Name.name)
+  users << User.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.unique.email,
+    password: "admin1234",
+    password_confirmation: "admin1234",
+    confirmed_at: Time.now,
+    jti: Faker::Alphanumeric.alpha(number: 10)
+  )
 end
 
 # Create Appointments
