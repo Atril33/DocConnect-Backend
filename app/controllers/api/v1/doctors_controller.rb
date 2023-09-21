@@ -1,16 +1,18 @@
 class Api::V1::DoctorsController < ApplicationController
   before_action :set_doctor, only: %i[show update destroy]
-  before_action :authenticate_user!
+ # before_action :authenticate_user!
 
-  # GET /doctors
-  # GET /doctors.json
   def index
     @doctors = Doctor.all
+    render json: @doctors
   end
-
-  # GET /doctors/1
-  # GET /doctors/1.json
-  def show; end
+  
+  def show
+    @doctors = Doctor.all
+    @doctor = @doctors.find(params[:id])
+    render json: @doctor
+  end
+  
 
   # POST /doctors
   # POST /doctors.json
