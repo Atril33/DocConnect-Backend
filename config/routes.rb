@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   devise_for :user, path: '', path_names: {
     sign_in: 'login',
@@ -13,7 +11,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :appointments, only: [:update, :destroy]
-      resources :doctors
+      resources :doctors, only: [:index, :show, :create, :destroy]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
