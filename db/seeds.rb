@@ -1,12 +1,3 @@
-# frozen_string_literal: true
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
 # Clear existing data
 Appointment.destroy_all
 Specialization.destroy_all
@@ -19,13 +10,17 @@ specializations = []
   specializations << Specialization.create(name: Faker::Job.unique.field)
 end
 
-# Create Doctors
+# Define office hours
+office_hours_start = Time.parse("09:00 AM")
+office_hours_end = Time.parse("05:00 PM")
+
+# Create Doctors with office hours
 doctors = []
 10.times do
   doctor = Doctor.create(
     name: Faker::Name.unique.name,
-    time_available_from: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    time_available_to: Faker::Time.between(from: DateTime.now, to: DateTime.now + 1),
+    time_available_from: office_hours_start,
+    time_available_to: office_hours_end,
     bio: Faker::Lorem.paragraph,
     fee_per_appointment: Faker::Number.decimal(l_digits: 2),
     specialization: specializations.sample
@@ -50,7 +45,7 @@ end
 100.times do
   Appointment.create(
     appointment_date: Faker::Date.forward(days: 30),
-    appointment_time: Faker::Time.between(from: DateTime.now, to: DateTime.now + 1),
+    appointment_time: Faker::Time.between(from: office_hours_start, to: office_hours_end),
     duration: Faker::Number.between(from: 15, to: 120),
     user: users.sample,
     doctor: doctors.sample
