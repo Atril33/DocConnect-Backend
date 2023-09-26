@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     registration: 'signup'
   }, controllers: {
     sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    confirmations: 'users/confirmations'
   }
 
   namespace :api do
