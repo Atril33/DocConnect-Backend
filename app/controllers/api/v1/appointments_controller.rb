@@ -2,8 +2,8 @@ class Api::V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[show update destroy]
 
   def index
-    @appointments = Appointment.all
-    render json: @appointments
+    @appointments = Appointment.includes(doctor: :specialization).all
+    render json: @appointments.to_json(include: { doctor: { include: :specialization } })
   end
 
   def shpw
