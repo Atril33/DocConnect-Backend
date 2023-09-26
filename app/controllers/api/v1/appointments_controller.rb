@@ -6,7 +6,7 @@ class Api::V1::AppointmentsController < ApplicationController
     render json: @appointments
   end
 
-  def shpw
+  def show
     render json: @appointment
   end
 
