@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :appointments, only: [:index, :show, :create, :update, :destroy]
       resources :doctors, only: [:index, :show, :create, :destroy]
+      get 'current_user', to: 'current_user#index'
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
