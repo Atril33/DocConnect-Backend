@@ -1,6 +1,25 @@
 class Api::V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[show update destroy]
 
+  def index
+    @appointments = Appointment.all
+    render json: @appointments
+  end
+
+  def shpw
+    render json: @appointment
+  end
+
+  def create
+    appointment = Appointment.new(appointment_params)
+
+    if appointment.save
+      render json: appointment, status: :created
+    else
+      render json: appointment.errors, status: :unprocessable_entity
+    end
+  end
+
   # PATCH/PUT /appointments/1
   # PATCH/PUT /appointments/1.json
   def update
@@ -23,6 +42,7 @@ class Api::V1::AppointmentsController < ApplicationController
   def set_appointment
     @appointment = Appointment.find(params[:id])
   end
+
 
   # Only allow a list of trusted parameters through.
   def appointment_params
