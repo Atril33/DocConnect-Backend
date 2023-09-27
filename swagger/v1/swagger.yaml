@@ -28,11 +28,6 @@ paths:
       responses:
         '200':
           description: successful
-    patch:
-      summary: update appointment
-      responses:
-        '200':
-          description: successful
     put:
       summary: update appointment
       responses:
@@ -78,51 +73,13 @@ paths:
       responses:
         '200':
           description: successful
-  "/signup/cancel":
-    get:
-      summary: cancel registration
-      responses:
-        '200':
-          description: successful
-  "/signup/sign_up":
-    get:
-      summary: new registration
-      responses:
-        '200':
-          description: successful
-  "/signup/edit":
-    get:
-      summary: edit registration
-      responses:
-        '200':
-          description: successful
   "/signup":
-    patch:
-      summary: update registration
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update registration
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete registration
-      responses:
-        '200':
-          description: successful
     post:
       summary: create registration
       responses:
         '200':
           description: successful
   "/login":
-    get:
-      summary: new session
-      responses:
-        '200':
-          description: successful
     post:
       summary: create session
       responses:
