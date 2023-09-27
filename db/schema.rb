@@ -28,8 +28,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_20_182035) do
 
   create_table "doctors", force: :cascade do |t|
     t.string "name"
-    t.date "time_available_from"
-    t.date "time_available_to"
+    t.time "time_available_from"
+    t.time "time_available_to"
     t.text "bio"
     t.decimal "fee_per_appointment"
     t.bigint "specialization_id"
