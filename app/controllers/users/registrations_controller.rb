@@ -3,8 +3,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
-  private
-
   def respond_with(resource, _opts = {})
     if request.method == "POST" && resource.persisted?
       render json: {
@@ -21,4 +19,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
       }, status: :unprocessable_entity
     end
   end
+
 end
