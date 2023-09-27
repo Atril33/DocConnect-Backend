@@ -11,8 +11,8 @@ specializations = []
 end
 
 # Define office hours
-office_hours_start = Time.parse("09:00 AM")
-office_hours_end = Time.parse("05:00 PM")
+office_hours_start = Time.zone.parse("09:00:00")
+office_hours_end = Time.zone.parse("17:00:00")
 
 # Create Doctors with office hours
 doctors = []
