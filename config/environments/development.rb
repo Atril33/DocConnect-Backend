@@ -74,4 +74,8 @@ Rails.application.configure do
 
   # Navigational
   config.navigational_formats = []
+
+  Rails.application.routes.default_url_options = {
+    host: "http://localhost:3000"
+  }
 end
