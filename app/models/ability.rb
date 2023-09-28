@@ -5,10 +5,12 @@ class Ability
 
     user ||= User.new
 
+    can :read, :all
+
     if user.admin?
-      can :create, Doctor
+      can :manage, Doctor
     end
 
-    can :read, Appointment, user_id: user.id
+    can :manage, Appointment, user_id: user.id
   end
 end
