@@ -4,7 +4,6 @@ class Api::V1::AppointmentsController < ApplicationController
 
   def index
     @appointments = current_user.appointments.includes(doctor: :specialization).all
-    render json: @appointments.to_json(include: { doctor: { include: :specialization } })
   end
 
   def show
