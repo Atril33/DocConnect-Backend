@@ -4,7 +4,6 @@ class Api::V1::DoctorsController < ApplicationController
 
   def index
     @doctors = Doctor.all.includes(:appointments)
-    render json: @doctors, include: :appointments
   end
 
   def show
@@ -18,7 +17,7 @@ class Api::V1::DoctorsController < ApplicationController
     @doctor = @specialization.doctors.new(doctor_params)
   
     if @doctor.save
-      render :show, status: :created, location: @doctor
+      render json: @doctor, status: :created
     else
       render json: @doctor.errors, status: :unprocessable_entity
     end
@@ -36,6 +35,6 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def doctor_params
-    params.require(:doctor).permit(:name, :time_available_from, :time_available_to, :bio, :fee_per_appointment).merge(specialization_id: @specialization.id)
+    params.require(:doctor).permit(:name, :time_available_from, :time_available_to, :bio, :fee_per_appointment, :photo).merge(specialization_id: @specialization.id)
   end  
 end
