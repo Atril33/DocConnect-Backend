@@ -6,7 +6,7 @@ class Api::V1::AppointmentsController < ApplicationController
     render json: @appointments.to_json(include: { doctor: { include: :specialization } })
   end
 
-  def shpw
+  def show
     render json: @appointment
   end
 

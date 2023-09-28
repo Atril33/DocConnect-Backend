@@ -6,4 +6,10 @@ class User < ApplicationRecord
          :jwt_authenticatable, jwt_revocation_strategy: self
 
   has_many :appointments
+
+  enum role: [:user, :admin]
+  
+  def admin?
+    role == 'admin'
+  end
 end
