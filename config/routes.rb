@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'specializations/index'
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
   devise_for :user, path: '', path_names: {
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :appointments, only: [:index, :show, :create, :update, :destroy]
       resources :doctors, only: [:index, :show, :create, :destroy]
+      resources :specializations, only: [:index]
       get 'current_user', to: 'current_user#index'
     end
   end
