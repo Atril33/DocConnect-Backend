@@ -85,4 +85,21 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Mailer
+  config.action_mailer.smtp_settings = {
+    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
+    :password => "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", # This is the secret sendgrid API key which was issued during API key creation
+    :domain => 'localhost:3000',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.default_url_options = { host: "https://restaurant-budget-testing.onrender.com" }
+
+  Rails.application.routes.default_url_options = {
+    host: "http://localhost:3000"
+  }
+
 end
