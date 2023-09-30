@@ -1,6 +1,6 @@
 class Doctor < ApplicationRecord
   belongs_to :specialization
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   has_one_attached :photo
 
   def photo_url
