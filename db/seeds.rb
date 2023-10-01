@@ -5,9 +5,14 @@ Doctor.destroy_all
 User.destroy_all
 
 # Create Specializations
-specializations = []
-10.times do
-  specializations << Specialization.create(name: Faker::Job.unique.field)
+specialization_names = [
+  "Cardiology", "Dermatology", "Endocrinology", "Gastroenterology",
+  "Neurology", "Oncology", "Orthopedics", "Pediatrics",
+  "Psychiatry", "Urology"
+]
+
+specializations = specialization_names.map do |name|
+  Specialization.create(name: name)
 end
 
 # Define office hours
@@ -16,16 +21,18 @@ office_hours_end = Time.zone.parse("17:00:00")
 
 # Create Doctors with office hours
 doctors = []
-10.times do
-  doctor = Doctor.create(
-    name: Faker::Name.unique.name,
-    time_available_from: office_hours_start,
-    time_available_to: office_hours_end,
-    bio: Faker::Lorem.paragraph,
-    fee_per_appointment: Faker::Number.decimal(l_digits: 2),
-    specialization: specializations.sample
-  )
-  doctors << doctor
+specializations.each do |specialization|
+  3.times do
+    doctor = Doctor.create(
+      name: Faker::Name.unique.name,
+      time_available_from: office_hours_start,
+      time_available_to: office_hours_end,
+      bio: Faker::Lorem.paragraph,
+      fee_per_appointment: Faker::Number.decimal(l_digits: 2),
+      specialization: specialization
+    )
+    doctors << doctor
+  end
 end
 
 # Create Users

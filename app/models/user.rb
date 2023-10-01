@@ -7,9 +7,9 @@ class User < ApplicationRecord
 
   has_many :appointments
 
-  enum role: [:user, :admin]
+  enum role: { user: 'user', admin: 'admin' }
   
   def admin?
-    role == 'admin'
+    role.to_sym == :admin
   end
 end
