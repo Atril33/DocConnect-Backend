@@ -40,6 +40,9 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def authorize_admin
+    user = current_user
+    user_json = UserSerializer.new(user).as_json
+    puts "Serialized User JSON: #{user_json}"
     unless current_user && current_user.role == 'admin'
       render json: { error: 'Only admins can create doctors' }, status: :unauthorized
     end
