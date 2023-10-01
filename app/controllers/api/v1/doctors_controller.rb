@@ -1,7 +1,7 @@
 class Api::V1::DoctorsController < ApplicationController
   before_action :set_doctor, only: %i[show update destroy]
-  
   before_action :authenticate_user!
+  before_action :authorize_admin, only: [:create]
 
   def index
     @doctors = Doctor.all.includes(:appointments)
@@ -37,5 +37,11 @@ class Api::V1::DoctorsController < ApplicationController
 
   def doctor_params
     params.require(:doctor).permit(:name, :time_available_from, :time_available_to, :bio, :fee_per_appointment, :photo).merge(specialization_id: @specialization.id)
-  end  
+  end
+
+  def authorize_admin
+    unless current_user && current_user.role == 'admin'
+      render json: { error: 'Only admins can create doctors' }, status: :unauthorized
+    end
+  end
 end
