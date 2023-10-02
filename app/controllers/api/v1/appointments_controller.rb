@@ -33,8 +33,12 @@ class Api::V1::AppointmentsController < ApplicationController
   # DELETE /appointments/1
   # DELETE /appointments/1.json
   def destroy
-    @appointment.destroy
-  end
+    if @appointment.destroy
+      render json: { message: 'Appointment was successfully destroyed' }, status: :ok
+    else
+      render json: { errors: @appointment.errors.full_messages }, status: :unprocessable_entity
+    end
+  end  
 
   private
 
