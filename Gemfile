@@ -55,6 +55,8 @@ gem 'cancancan'
 # Faker
 gem 'faker'
 
+gem 'google-cloud-storage', require: false
+
 # Sendgrid rails
 gem 'sendgrid-ruby'
 
