@@ -25,8 +25,17 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def destroy
-    @doctor = Doctor.find(params[:id])
-    @doctor.destroy
+    @doctor = Doctor.find_by(id: params[:id])
+  
+    if @doctor
+      if @doctor.destroy
+        render json: { message: 'Doctor was successfully destroyed' }, status: :ok
+      else
+        render json: { errors: @doctor.errors.full_messages }, status: :unprocessable_entity
+      end
+    else
+      render json: { error: 'Doctor not found' }, status: :not_found
+    end
   end
 
   private
