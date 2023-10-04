@@ -22,7 +22,7 @@ RSpec.describe 'users/registrations', type: :request do
         expect(json['data']['email']).to eq('mail444@mail.com')
       end
 
-      it 'returns a created status' do
+      it 'returns a ok status' do
         expect(response).to have_http_status(:ok)
       end
     end
