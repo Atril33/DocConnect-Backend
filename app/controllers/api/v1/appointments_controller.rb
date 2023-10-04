@@ -10,15 +10,7 @@ class Api::V1::AppointmentsController < ApplicationController
     render json: @appointment
   end
 
-  def create    
-    appointment = current_user.appointments.build(appointment_params)
 
-    if appointment.save
-      render json: appointment, status: :created
-    else
-      render json: appointment.errors, status: :unprocessable_entity
-    end
-  end
 
   def update
     if @appointment.update(appointment_params)
@@ -28,10 +20,7 @@ class Api::V1::AppointmentsController < ApplicationController
     end
   end
 
-  def destroy
-    if @appointment.destroy
-      render json: { message: 'Appointment was successfully destroyed' }, status: :ok
-    else
+
       render json: { errors: @appointment.errors.full_messages }, status: :unprocessable_entity
     end
   end  
