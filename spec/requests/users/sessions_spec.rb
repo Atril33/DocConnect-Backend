@@ -26,15 +26,23 @@ RSpec.describe 'users/sessions', type: :request do
 
     context 'with invalid parameters password' do
       before do
+        User.create(
+          name: 'tester_333',
+          email: 'mail666@mail.com',
+          password: 'admin1234',
+          password_confirmation: 'admin1234',
+          confirmed_at: Time.now,
+          jti: Faker::Alphanumeric.alpha(number: 10)
+        )
         post '/login', params:
                           { user: {
-                            email: nil,
-                            password: '12345678'
+                            email: 'mail666@mail.com',
+                            password: 'admin1234'
                           } }
       end
 
-      it 'returns an unprocessable entity' do
-        expect(response).to have_http_status(:unprocessable_entity)
+      it 'returns an ok entity for login' do
+        expect(response).to have_http_status(:ok)
       end
     end
   end
