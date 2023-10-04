@@ -32,6 +32,7 @@
 
 **DocConnect** is a Ruby on Rails web application with PostgreSQL as database. It allows to manage your budget by creating categories of expenses, and transactions for each category.
 
+<a href="https://github.com/Atril33/DocConnect-Frontend">Link to Front End Repository</a>
 For a video explanation, please [here]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -77,9 +78,11 @@ For a video explanation, please [here]()
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
->[Live Demo](https://dev--jovial-longma-dea964.netlify.app/)
+
+> [Live Demo](https://dev--jovial-longma-dea964.netlify.app/)
 
 > [Video Presentation](https://www.loom.com/share/bd25e5f6f20846828c31d7e837893961?sid=cf3a0e39-bdb6-465a-a91f-a3f6d6808155)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a id="getting-started"></a>
@@ -137,7 +140,7 @@ In the project directory, run the first time:
   bundle exec rake assets:precompile
 ```
 
- then, you can use:
+then, you can use:
 
 ```sh
   ./bin/dev
@@ -159,7 +162,7 @@ In the project directory, run the first time:
   bundle exec rake assets:precompile
 ```
 
- then, you can:
+then, you can:
 
 ```sh
   rspec .
@@ -224,7 +227,6 @@ We would like to thank Microverse for the idea for this project.
 Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
