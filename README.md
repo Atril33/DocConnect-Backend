@@ -81,8 +81,6 @@ For a video explanation, please [here]()
 
 > [Live Demo](https://dev--jovial-longma-dea964.netlify.app/)
 
-> [Video Presentation](https://www.loom.com/share/bd25e5f6f20846828c31d7e837893961?sid=cf3a0e39-bdb6-465a-a91f-a3f6d6808155)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a id="getting-started"></a>
