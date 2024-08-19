@@ -58,7 +58,7 @@ gem 'faker'
 gem 'google-cloud-storage', require: false
 
 # Sendgrid rails
-gem 'sendgrid-ruby'
+# gem 'sendgrid-ruby'
 
 gem 'dotenv-rails'
 
