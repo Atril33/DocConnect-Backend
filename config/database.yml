@@ -28,6 +28,8 @@ default: &default
 development:
   <<: *default
   database: DocConnect_Backend_development
+  password: <%= ENV["DOCCONNECT_BACKEND_DATABASE_PASSWORD"] %>
+  port: 5433
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -45,7 +47,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  # port: 5433
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
