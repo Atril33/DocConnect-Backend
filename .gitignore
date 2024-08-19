@@ -29,3 +29,5 @@
 /config/master.key
 
 /config/docconnect-400809-7d1c00d1fbc9.json
+
+.env
